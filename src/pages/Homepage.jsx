@@ -30,47 +30,6 @@ highlight: true
 }
 ];
 
-/* PORTFOLIO ITEMS */
-
-const PORTFOLIO_ITEMS = [
-{
-id: 1,
-cat: "Bakery",
-title: "Fresh Cake Offer",
-img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
-},
-{
-id: 2,
-cat: "Gym",
-title: "Monthly Membership Offer",
-img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
-},
-{
-id: 3,
-cat: "Retail",
-title: "Festive Season Sale",
-img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80"
-},
-{
-id: 4,
-cat: "Salon",
-title: "Discounted Hair Spa",
-img: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80"
-},
-{
-id: 5,
-cat: "Cafe",
-title: "Breakfast Combo Poster",
-img: "https://images.unsplash.com/photo-1501339817302-ee4f89db0fe0?auto=format&fit=crop&w=600&q=80"
-},
-{
-id: 6,
-cat: "Coaching",
-title: "Admission Open Flyer",
-img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
-}
-];
-
 /* TESTIMONIALS */
 
 const TESTIMONIALS = [
@@ -109,7 +68,7 @@ window.open(
 
 };
 
-/* HOMEPAGE COMPONENT */
+/* HOMEPAGE */
 
 const Homepage = ({ navigate }) => {
 
@@ -126,7 +85,7 @@ return (
 <div className="flex-1 text-center md:text-left">
 
 <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-700 px-4 py-1.5 rounded-full text-xs font-black tracking-widest mb-8 uppercase">
-<Zap size={14} fill="currentColor" />
+<Zap size={14} fill="currentColor"/>
 Fastest Design Service in India
 </div>
 
@@ -229,7 +188,6 @@ offer.highlight
 <li key={j} className="flex items-center gap-3 text-slate-600 font-bold">
 
 <CheckCircle size={18} className="text-green-500"/>
-
 {f}
 
 </li>
@@ -261,6 +219,60 @@ offer.highlight
 
 </section>
 
+{/* HOW POSTERBABU WORKS */}
+
+<section className="py-24 px-4 bg-indigo-950 text-white text-center">
+
+<div className="max-w-4xl mx-auto">
+
+<h2 className="text-3xl font-black mb-16 uppercase tracking-widest">
+How PosterBabu Works
+</h2>
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+{[
+{
+step: "01",
+title: "WhatsApp Request",
+desc: "Send your poster request directly on WhatsApp with your business details."
+},
+{
+step: "02",
+title: "We Design",
+desc: "Our designer creates a professional social media creative for your business."
+},
+{
+step: "03",
+title: "Receive & Post",
+desc: "Receive your ready-to-post design and upload instantly."
+}
+].map((s, i) => (
+
+<div key={i} className="flex flex-col items-center">
+
+<div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-orange-500 font-black text-xl border border-white/20">
+{s.step}
+</div>
+
+<h3 className="font-bold text-xl mb-3">
+{s.title}
+</h3>
+
+<p className="text-indigo-200 text-sm leading-relaxed max-w-xs">
+{s.desc}
+</p>
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+</section>
+
 {/* TESTIMONIALS */}
 
 <section className="py-24 px-4">
@@ -280,9 +292,7 @@ What Our Clients Say
 <div className="flex gap-1 text-orange-500 mb-4">
 
 {[...Array(t.rating)].map((_, j) => (
-
 <Star key={j} size={14} fill="currentColor"/>
-
 ))}
 
 </div>
