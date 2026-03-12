@@ -4,15 +4,15 @@ import { CheckCircle } from "lucide-react";
 /* Entry Offers */
 const ENTRY_OFFERS = [
   {
-    tagline: "Single Poster",
+    tagline: "Fast Edit",
     name: "Starter Creative",
     price: 49,
-    features: ["1 Poster Design", "Custom Text", "Quick Delivery"],
+    features: ["1 Pre-Existing Template Design", "Custom Text", "Quick Delivery"],
     button: "Order Now",
     highlight: false,
   },
   {
-    tagline: "Editable Template",
+    tagline: "Custom Design",
     name: "Poster Edit",
     price: 149,
     features: ["Edit Existing Design", "Text/Image Changes", "Fast Delivery"],
@@ -86,7 +86,7 @@ const FAQS = [
 
 /* WhatsApp redirect */
 const openWhatsApp = (plan) => {
-  const phone = "91XXXXXXXXXX"; // replace with your number
+  const phone = "917428091729"; // replace with your number
   const message = `Hi PosterBabu, I want to order the ${plan} plan.`;
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
