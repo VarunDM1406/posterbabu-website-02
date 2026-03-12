@@ -6,7 +6,8 @@ import { MessageCircle, Zap, CheckCircle, Star } from "lucide-react";
 const ENTRY_OFFERS = [
 {
 name: "Fast Edit",
-price: 49,
+oldPrice:99,
+newPrice:49,
 tagline: "Perfect for quick changes",
 features: [
 "Edit existing poster",
@@ -17,13 +18,14 @@ button: "Edit My Poster"
 },
 {
 name: "Custom Poster",
-price: 149,
+oldPrice:299,
+newPrice:149,
 tagline: "Designed for your business",
 features: [
 "Custom poster design",
 "Instagram / WhatsApp size",
 "HD file delivery",
-"Delivered within 24 hours"
+"Delivered within an hour"
 ],
 button: "Create My Poster",
 highlight: true
@@ -58,8 +60,8 @@ rating: 5
 const openWhatsApp = (context = "") => {
 
 const baseMessage = context
-? `Hi PosterBabu 👋\nI'm interested in: ${context}.\n\nBusiness Name:\nDetails:`
-: "Hi PosterBabu 👋 I want to order a poster for my business.";
+? `Hi PosterBabu! I'm interested in: ${context}.\n\nBusiness Name:\nDetails:`
+: "Hi PosterBabu! I want to order a poster for my business.";
 
 window.open(
 `https://wa.me/917428091729?text=${encodeURIComponent(baseMessage)}`,
@@ -82,6 +84,8 @@ return (
 
 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
 
+{/* LEFT SIDE */}
+
 <div className="flex-1 text-center md:text-left">
 
 <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-700 px-4 py-1.5 rounded-full text-xs font-black tracking-widest mb-8 uppercase">
@@ -102,8 +106,8 @@ Delivered in <span className="font-bold text-slate-900">minutes</span> via Whats
 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
 
 <button
-onClick={() => openWhatsApp("Poster Order")}
-className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl flex items-center justify-center gap-3"
+onClick={() => openWhatsApp("Hero Poster Order")}
+className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl flex items-center justify-center gap-3 active:scale-95"
 >
 
 <MessageCircle fill="currentColor"/>
@@ -122,15 +126,62 @@ View Pricing
 
 </div>
 
+{/* STATS BAR */}
+
+<div className="grid grid-cols-3 text-center md:text-left mt-16 border-t pt-10">
+
+<div>
+<p className="text-3xl font-black text-slate-900">100+</p>
+<p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+Posters Delivered
+</p>
 </div>
 
-<div className="flex-1 hidden md:block">
+<div className="border-x">
+<p className="text-3xl font-black text-slate-900">50+</p>
+<p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+Businesses Served
+</p>
+</div>
+
+<div>
+<p className="text-3xl font-black text-orange-600">4.9★</p>
+<p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+Customer Rating
+</p>
+</div>
+
+</div>
+
+</div>
+
+{/* RIGHT SIDE POSTER */}
+
+<div className="flex-1 relative hidden md:block">
+
+<div className="relative bg-white p-4 rounded-[3rem] shadow-2xl border border-slate-100 rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
 
 <img
-src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
-alt="Poster Sample"
-className="rounded-3xl shadow-2xl"
+src="/templates/gym-offer.png"
+alt="Gym Poster Sample"
+className="rounded-[2.5rem] w-full h-[500px] object-cover"
 />
+
+{/* POSTER TAG */}
+
+<div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-4/5 bg-white/95 backdrop-blur p-4 rounded-2xl shadow-xl border border-slate-100">
+
+<p className="text-[10px] font-black text-orange-600 uppercase mb-1">
+Gym Sample
+</p>
+
+<p className="font-bold text-slate-900 text-sm leading-tight">
+Special 50% Off Sample Design
+</p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -186,10 +237,8 @@ offer.highlight
 {offer.features.map((f, j) => (
 
 <li key={j} className="flex items-center gap-3 text-slate-600 font-bold">
-
 <CheckCircle size={18} className="text-green-500"/>
 {f}
-
 </li>
 
 ))}
@@ -235,17 +284,17 @@ How PosterBabu Works
 {
 step: "01",
 title: "WhatsApp Request",
-desc: "Send your poster request directly on WhatsApp with your business details."
+desc: "Send your poster request directly on WhatsApp."
 },
 {
 step: "02",
 title: "We Design",
-desc: "Our designer creates a professional social media creative for your business."
+desc: "Our designer creates your poster within minutes."
 },
 {
 step: "03",
 title: "Receive & Post",
-desc: "Receive your ready-to-post design and upload instantly."
+desc: "Receive ready-to-post designs instantly."
 }
 ].map((s, i) => (
 

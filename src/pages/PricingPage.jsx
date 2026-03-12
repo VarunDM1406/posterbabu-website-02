@@ -6,7 +6,8 @@ const ENTRY_OFFERS = [
   {
     tagline: "Fast Edit",
     name: "Starter Creative",
-    price: 49,
+    oldPrice: 99,
+    newPrice: 49,
     features: ["1 Pre-Existing Template Design", "Custom Text", "Quick Delivery"],
     button: "Order Now",
     highlight: false,
@@ -14,7 +15,8 @@ const ENTRY_OFFERS = [
   {
     tagline: "Custom Design",
     name: "Poster Edit",
-    price: 149,
+    oldPrice: 299,
+    newPrice: 149,
     features: ["Edit Existing Design", "Text/Image Changes", "Fast Delivery"],
     button: "Get Edit",
     highlight: true,
@@ -26,7 +28,8 @@ const PRICING_PLANS = [
   {
     name: "Starter",
     desc: "Perfect for small shops starting online presence",
-    price: 499,
+    oldPrice: 799,
+    newPrice: 499,
     features: [
       "8 Social Media Posters",
       "Festival Creatives",
@@ -39,7 +42,8 @@ const PRICING_PLANS = [
   {
     name: "Growth",
     desc: "For businesses that post regularly",
-    price: 999,
+    oldPrice:1499,
+    newPice: 999,
     features: [
       "20 Social Media Posters",
       "Festival Creatives",
@@ -52,6 +56,7 @@ const PRICING_PLANS = [
   {
     name: "Pro",
     desc: "For brands that want consistent content",
+    oldPrice: 2999,
     price: 1999,
     features: [
       "40 Social Media Posters",
